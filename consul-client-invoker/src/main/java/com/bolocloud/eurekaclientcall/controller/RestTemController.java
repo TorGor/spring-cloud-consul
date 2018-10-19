@@ -43,7 +43,7 @@ public class RestTemController {
 
 
     @GetMapping(value = "/call")
-//    @HystrixCommand
+    @HystrixCommand
     public String call(){
         String msg = template.getForObject("http://consul-provider/provider",String.class);
         return msg;
